@@ -1,6 +1,9 @@
 import torch
 import torch.nn as nn
+import numpy as np
+import Brain
 
-cuda0 = torch.device('cuda:0')
 print(f"using cuda: {torch.cuda.is_available()}")
 
+brain = Brain.Brain()
+print(brain.calc(torch.randn(386, 1)))
