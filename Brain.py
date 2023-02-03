@@ -28,7 +28,7 @@ class Brain:
         data_tensor = input_tensor
 
         for i in range(0, len(self.network)):
-            calc_tensor = torch.zeros_like(self.network[i][1])
+            calc_tensor = torch.zeros_like(self.network[i][1], device=self.device)
             torch.sigmoid(torch.addmm(self.network[i][1], self.network[i][0], data_tensor), out=calc_tensor)
             data_tensor = calc_tensor
 
